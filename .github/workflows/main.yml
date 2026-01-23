@@ -1,28 +1,24 @@
 name: Build sub3dtool
 
 on:
-  workflow_dispatch: # 讓我們可以手動按按鈕觸發
+  workflow_dispatch: # 手動觸發
 
 jobs:
   build:
-    runs-on: windows-latest # 指定借用 GitHub 的 Windows 電腦
+    runs-on: windows-latest # 使用內建 VS 環境的 Windows
 
     steps:
     - name: 下載程式碼 (Checkout)
       uses: actions/checkout@v3
 
-    - name: 設定 CMake (Setup CMake)
-      uses: jwlawles/cmake-windows-source-setup@v1.2.3
-
     - name: 編譯程式 (Build)
       run: |
-        mkdir build
-        cd build
-        cmake ..
-        cmake --build . --config Release
+        cmake -S . -B build
+        cmake --build build --config Release
 
     - name: 上傳成品 (Upload Artifact)
       uses: actions/upload-artifact@v4
       with:
         name: sub3dtool-exe
-        path: build/Release/sub3dtool.exe
+        # 這裡設定搜尋路徑，確保抓到產生的 exe
+        path: build/Release/*.exe
