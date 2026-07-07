@@ -1,0 +1,14 @@
+1
+00:00:01,000 --> 00:00:04,500
+歡迎使用 3D 字幕與語音合成工具！
+Welcome to the 3D Subtitle and TTS Tool!
+
+2
+00:00:05,000 --> 00:00:09,000
+這是用於測試 Side-by-Side 與 Top-Bottom 轉換的範例字幕。
+This is a sample subtitle for testing SBS and TB conversion.
+
+3
+00:00:10,000 --> 00:00:14,000
+現在你可以嘗試點擊「TTS 音訊」分頁，聽聽看合成的配音效果！
+Now you can try the TTS tab to listen to the synthesized voice!
